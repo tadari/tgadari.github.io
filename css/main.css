@@ -2,7 +2,7 @@
 	border: 1px solid black;
 	border-style: solid;
 	background-color: gray;
-	position: fixed;
+	position: relative;
 	left: 50px;
 }
 
