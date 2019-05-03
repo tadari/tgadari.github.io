@@ -5,9 +5,7 @@
 	position: relative;
 	left: 50px;
 	touch-action: none;
-	height: 100%;
     overflow: hidden;
-    width: 100%;
     position: fixed;
 }
 
