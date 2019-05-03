@@ -6,7 +6,6 @@
 	left: 50px;
 	touch-action: none;
     overflow: hidden;
-    position: fixed;
 }
 
 #controlButtons {
