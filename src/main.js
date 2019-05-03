@@ -156,6 +156,10 @@ function myDown(e){
 		}
 	}
 }
+
+function myUp(){
+	canvas.onmousemove = null;
+}
 	
 init();
 canvas.onmousedown = myDown;
