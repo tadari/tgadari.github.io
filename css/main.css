@@ -3,9 +3,17 @@
 	border-style: solid;
 	background-color: gray;
 	position: relative;
-	left: 350px;
-	touch-action: none;
-    position: fixed;
+	left: 50px;
+}
+
+@media (max-width: 576px) {
+	#myCanvas {
+		left: 350px;
+		touch-action: none;
+		position: fixed;
+	}
+	
+	
 }
 
 #controlButtons {
