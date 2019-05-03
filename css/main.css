@@ -13,17 +13,14 @@
 		width: 100%;
 		left: 350px;
 		touch-action: none;
-		position: fixed;
+	
 	}
 	
-	html*
-	{
-		height: 100%;
-		overflow: hidden;
-		width: 100%;
-		left: 350px;
-		touch-action: none;
-		position: fixed;
+	html, body {
+	  overflow-x: hidden;
+	}
+	body {
+	  position: relative;
 	}
 	
 	
