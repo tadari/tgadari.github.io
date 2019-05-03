@@ -20,6 +20,7 @@ body {
 		width: 100%;
 		left: 350px;
 		touch-action: none;
+		position: absolute;
 	
 	}
 	
@@ -30,3 +31,4 @@ body {
 	left: 55px;
 	top: 2px;
 }
+
