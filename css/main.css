@@ -4,17 +4,11 @@
 	background-color: gray;
 	position: relative;
 	left: 50px;
+	touch-action: none;
 }
 
 #controlButtons {
 	position: relative;
 	left: 55px;
 	top: 2px;
-}
-
-.lock-screen {
-    height: 100%;
-    overflow: hidden;
-    width: 100%;
-    position: fixed;
 }
