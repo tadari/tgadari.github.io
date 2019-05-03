@@ -157,9 +157,24 @@ function myDown(e){
 	}
 }
 
+var detectTap;
 function myUp(){
 	canvas.onmousemove = null;
 }
+
+$(document).on('touchstart', function() {
+    detectTap = true; //detects all touch events
+});
+$(document).on('touchmove', function() {
+    detectTap = false; //Excludes the scroll events from touch events
+});
+$(document).on('click touchend', function(event) {
+    if (event.type == "click") detectTap = true; //detects click events 
+       if (detectTap){
+          console.log("Works?");
+
+       }
+ });
 	
 init();
 canvas.onmousedown = myDown;
