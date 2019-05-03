@@ -2,26 +2,16 @@
 	border: 1px solid black;
 	border-style: solid;
 	background-color: gray;
-	position: relative;
+	position: fixed;
 	left: 50px;
 }
 
-body.noScroll{
-	overflow: hidden;
+body,
+html {
+  position: fixed;
 }
 
-@media (max-width: 576px) {
-	#myCanvas {
-		height: 100%;
-		overflow: hidden;
-		width: 100%;
-		left: 350px;
-		touch-action: none;
-		position: absolute;
-	
-	}
-	
-}
+
 
 #controlButtons {
 	position: relative;
