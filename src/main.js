@@ -171,7 +171,7 @@ $(document).on('touchmove', function() {
 $(document).on('click touchend', function(event) {
     if (event.type == "click") detectTap = true; //detects click events 
        if (detectTap){
-          console.log("Works?");
+          myDown;
 
        }
  });
