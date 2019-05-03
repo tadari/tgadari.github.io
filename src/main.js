@@ -48,34 +48,6 @@ function clearAllTiles(){
 	
 }
 
-function saveData(){
-	for(r = (tileRowCount-1); r >= 0; r--){
-		var rev = 0;
-			for(c = 0; c < tileColumnCount; c++){
-				//This line is to make sure data gets sent in the order
-				//of how the matrix lights are wired
-				if(r%2 == 0)c = tileColumnCount - 1 - rev;
-				
-				//Turn RGB to GRB(since the matrix uses GRB)
-				var x = tiles[c][r].state;
-				x = x.slice(1,7);
-				x = parseInt(x, 16);
-				x = (x & 0x0000FF) | ((x & 0xFF0000) >>> 8) | ((x & 0x00FF00) << 8);	
-
-				var ledString = x.toString(16);
-				while(ledString.length < 6) ledString = '0' + ledString;
-				dataString = dataString + ledString;
-				c = rev++;
-			}
-		}
-				/*$.ajax({
-					type: "POST",
-						url: "/cgi-bin/save.py",
-					data: {param: dataString},
-					 context: document.body
-					});	*/
-}
-
 
 function sleep(milliseconds) {
   var start = new Date().getTime();
@@ -103,7 +75,7 @@ for(r = (tileRowCount-1); r >= 0; r--){
 			x = (x & 0x0000FF) | ((x & 0xFF0000) >>> 8) | ((x & 0x00FF00) << 8);	
 
 			var ledString = x.toString(16);
-			while(ledString.length < 6) ledString = '0' + ledString;
+while(ledString.length < 6) ledString = '0' + ledString;
 			dataString = dataString + ledString;
 			c = rev++;
 		}
@@ -192,4 +164,3 @@ function myUp(){
 init();
 canvas.onmousedown = myDown;
 canvas.onmouseup = myUp;
-
