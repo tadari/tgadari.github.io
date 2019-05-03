@@ -166,3 +166,4 @@ canvas.onmousedown = myDown;
 canvas.onmouseup = myUp;
 canvas.ontouchstart = myDown;
 canvas.ontouchend = myUp;
+canvas.ontouchmove = myDown;
