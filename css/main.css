@@ -8,6 +8,9 @@
 
 @media (max-width: 576px) {
 	#myCanvas {
+		height: 100%;
+		overflow: hidden;
+		width: 100%;
 		left: 350px;
 		touch-action: none;
 		position: fixed;
