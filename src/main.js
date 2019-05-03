@@ -164,6 +164,7 @@ function myUp(){
 
 $(document).on('touchstart', function() {
     detectTap = true; //detects all touch events
+	myDown(e);
 });
 $(document).on('touchmove', function() {
     detectTap = false; //Excludes the scroll events from touch events
@@ -171,7 +172,7 @@ $(document).on('touchmove', function() {
 $(document).on('click touchend', function(event) {
     if (event.type == "click") detectTap = true; //detects click events 
        if (detectTap){
-          myDown;
+          
 
        }
  });
