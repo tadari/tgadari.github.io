@@ -170,6 +170,6 @@ canvas.onmouseup = myUp;
 canvas.ontouchmove = myMove;
 
 canvas.ontouchstart = (e) => {
-    e.preventDefault();
-	canvas.ontouchstart = myDown;
+	 myDown;
+	 e.preventDefault();
 };
