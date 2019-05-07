@@ -417,6 +417,60 @@ $._farbtastic = function (container, options) {
     $(document).unbind('mouseup', fb.mouseup);
     $._farbtastic.dragging = false;
   }
+  
+  
+  /**
+   * Touchstart handler
+   */
+  fb.touchstart = function (event) {
+    // Capture mouse
+    if (!$._farbtastic.dragging) {
+      $(document).bind('touchmove', fb.touchmove).bind('touchend', fb.mouseup);
+      $._farbtastic.dragging = true;
+    }
+
+    // Update the stored offset for the widget.
+    fb.offset = $(container).offset();
+
+    // Check which area is being dragged
+    var pos = fb.widgetCoords(event);
+    fb.circleDrag = Math.max(Math.abs(pos.x), Math.abs(pos.y)) > (fb.square + 2);
+
+    // Process
+    fb.touchmove(event);
+    return false;
+  }
+
+  /**
+   * Touchmove handler
+   */
+  fb.touchmove = function (event) {
+    // Get coordinates relative to color picker center
+    var pos = fb.widgetCoords(event);
+
+    // Set new HSL parameters
+    if (fb.circleDrag) {
+      var hue = Math.atan2(pos.x, -pos.y) / 6.28;
+      fb.setHSL([(hue + 1) % 1, fb.hsl[1], fb.hsl[2]]);
+    }
+    else {
+      var sat = Math.max(0, Math.min(1, -(pos.x / fb.square / 2) + .5));
+      var lum = Math.max(0, Math.min(1, -(pos.y / fb.square / 2) + .5));
+      fb.setHSL([fb.hsl[0], sat, lum]);
+    }
+    return false;
+  }
+
+  /**
+   * Touchup handler
+   */
+  fb.touchend = function () {
+    // Uncapture mouse
+    $(document).unbind('touchmove', fb.touchmove);
+    $(document).unbind('touchend', fb.touchend);
+    $._farbtastic.dragging = false;
+  }
+  
 
   /* Various color utility functions */
   fb.dec2hex = function (x) {
