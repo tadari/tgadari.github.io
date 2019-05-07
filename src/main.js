@@ -161,14 +161,14 @@ function myUp(){
 	canvas.onmousemove = null;
 }
 
-canvas.ontouchend = (e) => {
-   // e.preventDefault();
-};
 	
 init();
 canvas.onmousedown = myDown;
 canvas.onmouseup = myUp;
 
 canvas.ontouchstart = myDown;
+canvas.ontouchend = (e) => {
+    e.preventDefault();
+};
 //canvas.ontouchend = myUp;
 canvas.ontouchmove = myMove;
