@@ -162,7 +162,7 @@ function myUp(){
 }
 
 canvas.ontouchend = (e) => {
-    e.preventDefault();
+   // e.preventDefault();
 };
 	
 init();
@@ -170,5 +170,5 @@ canvas.onmousedown = myDown;
 canvas.onmouseup = myUp;
 
 canvas.ontouchstart = myDown;
-canvas.ontouchend = myUp;
+//canvas.ontouchend = myUp;
 canvas.ontouchmove = myMove;
