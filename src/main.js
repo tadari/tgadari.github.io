@@ -171,4 +171,5 @@ canvas.ontouchmove = myMove;
 
 canvas.ontouchstart = (e) => {
     e.preventDefault();
+	canvas.ontouchstart = myDown;
 };
