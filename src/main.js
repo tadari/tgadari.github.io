@@ -160,6 +160,10 @@ function myDown(e){
 function myUp(){
 	canvas.onmousemove = null;
 }
+
+canvas.ontouchend = (e) => {
+    e.preventDefault();
+};
 	
 init();
 canvas.onmousedown = myDown;
