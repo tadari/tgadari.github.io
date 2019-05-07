@@ -2,8 +2,13 @@
 	border: 1px solid black;
 	border-style: solid;
 	background-color: gray;
-	overflow: hidden;
-    height: 100%;
+	position: relative;
+	left: 50px;
+}
+
+body,
+html {
+  position: fixed;
 }
 
 
