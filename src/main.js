@@ -166,9 +166,7 @@ init();
 canvas.onmousedown = myDown;
 canvas.onmouseup = myUp;
 
-//canvas.ontouchstart = myDown;
 canvas.ontouchmove = myMove;
-
 canvas.ontouchstart = (e) => {
 	 myDown(e);
 	 e.preventDefault();
